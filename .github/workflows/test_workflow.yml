@@ -2,23 +2,19 @@
 
 name: test-workflows
 
-# Controls when the workflow will run
+# Controls when the workflow will run 
+# https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  # push:
-  #   branches: [ "main" ]
-
+  schedule:
+    - cron: '44 8 * * *'
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  # https://github.com/marketplace/actions/github-push
+  KeepAlive:
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
@@ -26,7 +22,6 @@ jobs:
             persist-credentials: true
             fetch-depth: 0
 
-      # Runs a set of commands using the runners shell
       - name: Update File
         run: |
           date >| update_time.txt
