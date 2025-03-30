@@ -6,9 +6,9 @@ name: test-workflows
 # https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows
 on:
   schedule:
-    - cron: '44 8 * * *'
+    - cron: '48 8 * * *'
   # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+  # workflow_dispatch:
 
 jobs:
   # https://github.com/marketplace/actions/github-push
@@ -23,8 +23,11 @@ jobs:
             fetch-depth: 0
 
       - name: Update File
+        env: 
+          TEST_SECRET: ${{ secrets.TEST_SECRET_USAGE }}
         run: |
           date >| update_time.txt
+          "$TEST_SECRET_USAGE" >> update_time.txt
       
       - name: Commit files
         run: |
