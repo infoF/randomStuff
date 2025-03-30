@@ -27,7 +27,7 @@ jobs:
           TEST_SECRET: ${{ secrets.TEST_SECRET_USAGE }}
         run: |
           date >| update_time.txt
-          echo "$TEST_SECRET_USAGE" >> update_time.txt
+          echo "$TEST_SECRET" >> update_time.txt
       
       - name: Commit files
         run: |
