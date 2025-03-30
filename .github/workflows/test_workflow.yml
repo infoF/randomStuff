@@ -5,9 +5,12 @@ name: test-workflows
 # Controls when the workflow will run 
 # https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows
 on:
-  schedule:
-    - cron: '*/15 * * * *'
+  ## schedules can be verry deplayed. up to minutes. 
+  # schedule:
+  #   - cron: '*/15 * * * *'
+
   # Allows you to run this workflow manually from the Actions tab
+  ## does not interfere with schedules
   workflow_dispatch:
 
 jobs:
