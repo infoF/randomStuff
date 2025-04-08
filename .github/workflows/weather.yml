@@ -27,3 +27,5 @@ jobs:
                 pip install -r ./weather/requirements.txt
             - name: Run Script
               run: python ./weather/test_run.py --in "${{ vars.STATION_NAME }}"
+              env: 
+                TEST_SECRET: ${{ secrets.TEST_SECRET_USAGE }}
