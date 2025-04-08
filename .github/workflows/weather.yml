@@ -1,0 +1,29 @@
+name: weather
+
+on:
+    ## schedules can be verry deplayed. up to minutes. 
+    # schedule:
+    #   - cron: '*/15 * * * *'
+  
+    # Allows you to run this workflow manually from the Actions tab
+    ## does not interfere with schedules
+    workflow_dispatch:
+
+jobs:
+    GetWeather:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: checkout repo content
+              uses: actions/checkout@v4 
+            - name: setup python
+              uses: actions/setup-python@v5
+              with:
+                python-version: 3.10 #install the python needed
+                cache: 'pip'
+            - name: Install Dependencies
+              run: |
+                python -m pip install --upgrade pip
+                pip install -r ./weather/requirements.txt
+            - name: Run Script
+              run: python ./weather/test_run.py --in "${{ vars.STATION_NAME }}"
