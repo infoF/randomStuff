@@ -2,8 +2,8 @@ name: weather
 
 on:
     ## schedules can be verry deplayed. up to minutes. 
-    # schedule:
-    #   - cron: '*/15 * * * *'
+    schedule:
+      - cron: '0 12 * * *'
   
     # Allows you to run this workflow manually from the Actions tab
     ## does not interfere with schedules
