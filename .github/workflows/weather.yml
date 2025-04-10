@@ -38,8 +38,10 @@ jobs:
                 chmod +x ./weather/run.bash 
                 ./weather/run.bash 
               env: 
-                TEST_SECRET: ${{ secrets.PAT }}
+                TEST_SECRET_USAGE: ${{ secrets.TEST_SECRET_USAGE }}
+                PAT: ${{ secrets.PAT }}
                 W_KEY: ${{ secrets.W_KEY }}
+                GS_AUTH: ${{ secrets.GS_AUTH }}
                 STATION_NAME: ${{ vars.STATION_NAME }}
                 GOOGLE_SHEET: ${{ vars.GOOGLE_SHEET }}
                 GOOGLE_WORK_SHEET: ${{ vars.GOOGLE_WORK_SHEET }}
