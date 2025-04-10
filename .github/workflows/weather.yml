@@ -23,10 +23,10 @@ jobs:
                 python-version: '3.10' #install the python needed
                 cache: 'pip'
 
-            - name: Install Dependencies
-              run: |
-                python -m pip install --upgrade pip
-                pip install -r ./weather/requirements.txt
+            # - name: Install Dependencies
+            #   run: |
+            #     python -m pip install --upgrade pip
+            #     pip install -r ./weather/requirements.txt
 
             # - name: Run Script
             #   run: python ./weather/test_run.py --in "${{ vars.STATION_NAME }}"
@@ -38,7 +38,7 @@ jobs:
                 chmod +x ./weather/run.bash 
                 ./weather/run.bash 
               env: 
-                TEST_SECRET_USAGE: ${{ secrets.TEST_SECRET_USAGE }}
+                TEST_SECRET: ${{ secrets.TEST_SECRET_USAGE }}
                 PAT: ${{ secrets.PAT }}
                 W_KEY: ${{ secrets.W_KEY }}
                 GS_AUTH: ${{ secrets.GS_AUTH }}

@@ -13,4 +13,4 @@ DOWNLOADFILENAME="./wetter.py"
 #     -o $DOWNLOADFILENAME \
 #     -L https://raw.githubusercontent.com/infoF/WeatherIgling/master/wetter_igling_gs.py
 
-python ./weather/test_run.py --in "111"
+python ./weather/test_run.py --in "222"
