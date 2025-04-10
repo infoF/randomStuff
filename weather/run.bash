@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-echo $GOOGLE_SHEET
-echo $GOOGLE_WORK_SHEET
-echo $STATION_NAME
+# echo $GOOGLE_SHEET
+# echo $GOOGLE_WORK_SHEET
+# echo $STATION_NAME
 
 DOWNLOADFILENAME="./wetter.py"
 
@@ -13,4 +13,4 @@ DOWNLOADFILENAME="./wetter.py"
 #     -o $DOWNLOADFILENAME \
 #     -L https://raw.githubusercontent.com/infoF/WeatherIgling/master/wetter_igling_gs.py
 
-python ./weather/test_run.py --in "222"
+python ./weather/test_run.py --in $STATION_NAME

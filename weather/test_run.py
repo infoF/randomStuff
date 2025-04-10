@@ -7,4 +7,4 @@ parser.add_argument("--in",nargs = 1)
 args = vars(parser.parse_args())
 
 print(args["in"])
-print(os.environ["TEST_SECRET"] == 111)
+print(os.environ["TEST_SECRET"] == "111")
