@@ -35,8 +35,8 @@ jobs:
 
             - name: Run Bash Script
               run: |
-                chmod +x ./weather/test_run.bash 
-                ./weather/test_run.bash 
+                chmod +x ./weather/run.bash 
+                ./weather/run.bash 
               env: 
                 TEST_SECRET: ${{ secrets.PAT }}
                 W_KEY: ${{ secrets.W_KEY }}
